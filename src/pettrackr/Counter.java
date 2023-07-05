@@ -19,8 +19,7 @@ public class Counter implements AutoCloseable {
     @Override
     public void close() throws Exception {
         if (count > 0) {
-            throw new IllegalStateException("Счетчик был использован вне блока "
-                    + "try-with-resources или ресурс остался открытым.");
+            throw new IllegalStateException("Счетчик был использован вне ресурсного блока");
         }
     }
 }
